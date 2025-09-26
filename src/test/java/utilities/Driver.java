@@ -6,13 +6,16 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import pages.*;
 
 import java.time.Duration;
+import java.util.Arrays;
+import java.util.List;
 
 //Singleton driver class
 public class Driver {
 
-    private static WebDriver driver;//Without initialization this is null.
+    public static WebDriver driver;//Without initialization this is null.
     public static WebDriverWait wait;
 
     private Driver() {//None can create an object from this class
@@ -55,7 +58,6 @@ public class Driver {
             driver = null;
         }
     }
-
     /*
     Multi-Browser Support: Chrome, Firefox, Safari, Headless Chrome
     Configuration-Driven: Browser type from properties file
