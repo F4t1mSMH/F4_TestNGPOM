@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="OHRMLogin Test Suite">
+    <test verbose="2" preserve-order="true" name="AFSignInPage" parallel="methods" thread-count="5">
+        <classes>
+            <class name="tasks.T03_AFSignInPageTest">
+                <methods>
+                    <include name="AFSignInPageTest"/>
+                    <include name="AFSignInPageTest1"/>
+                    <include name="AFSignInPageTest2"/>
+                    <include name="AFSignInPageTest3"/>
+                    <include name="AFSignInPageTest4"/>
+                    <include name="AFSignInPageWeakPassword"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

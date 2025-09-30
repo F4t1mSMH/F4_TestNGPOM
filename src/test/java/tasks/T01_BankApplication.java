@@ -3,6 +3,7 @@ package tasks;
 import com.github.javafaker.Faker;
 import org.openqa.selenium.By;
 import org.openqa.selenium.TimeoutException;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
@@ -16,8 +17,6 @@ import java.awt.*;
 import java.time.Duration;
 import java.util.Arrays;
 import java.util.List;
-
-import static utilities.Driver.driver;
 import static utilities.Driver.getDriver;
 
 public class T01_BankApplication {
@@ -56,11 +55,12 @@ public class T01_BankApplication {
             accountManagement.submit.click();
 
             try {
-                WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+                WebDriver driver;
+                WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(10));
                 wait.until(ExpectedConditions.alertIsPresent());
-                String alertText = driver.switchTo().alert().getText();
+                String alertText = Driver.getDriver().switchTo().alert().getText();
                 System.out.println("Alert text: " + alertText);
-                driver.switchTo().alert().accept();
+                Driver.getDriver().switchTo().alert().accept();
                 System.out.println("Alert handled successfully.");
             } catch (TimeoutException e) {
                 System.out.println("No alert was present after form submission.");
