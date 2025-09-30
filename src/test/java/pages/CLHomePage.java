@@ -12,5 +12,5 @@ public class CLHomePage {
     }
 
     @FindBy(id="signup")
-    public WebElement signUp;
+    public WebElement signup;
 }

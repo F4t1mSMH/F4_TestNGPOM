@@ -5,9 +5,9 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
 
-public class CLContactPage {
+public class CLAddContactPage {
 
-    public CLContactPage(){
+    public CLAddContactPage(){
         PageFactory.initElements(Driver.getDriver(), this);
     }
 

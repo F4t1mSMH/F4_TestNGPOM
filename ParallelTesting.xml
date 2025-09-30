@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Parallel Test Suite" parallel="classes" thread-count="2">
+
+    <test verbose="2" preserve-order="true" name="Parallel">
+        <classes>
+            <class name="tests.C01_ContactList"> </class>
+            <class name="tests.C02_AddRecordFluentPOM"> </class>
+            <class name="tests.C03_ActionsForm"> </class>
+        </classes>
+    </test>
+
+</suite>

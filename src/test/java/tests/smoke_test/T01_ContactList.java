@@ -1,16 +1,16 @@
-package tests;
+package tests.smoke_test;
 
 import com.github.javafaker.Faker;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import pages.CLAddContactPage;
 import pages.CLAddUserPage;
+import pages.CLAddContactPage;
 import pages.CLContactListPage;
 import pages.CLHomePage;
 import utilities.ConfigReader;
 import utilities.Driver;
 
-public class C01_ContactList {
+public class T01_ContactList {
 
     /*
     Target: https://thinking-tester-contact-list.herokuapp.com/
