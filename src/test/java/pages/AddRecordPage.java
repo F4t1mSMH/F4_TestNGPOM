@@ -19,6 +19,7 @@ public class AddRecordPage {
     private By addRecordButton = By.xpath("//button[@onclick='addRecord()']");
     private String deleteButtonByNameXPath = "//tr[contains(.,'%s')]//button[@class='delete-button']";
     private By tableBody = By.id("tableBody");
+    private By deletButton = By.xpath("//*[@id='tableBody']/tr[3]/td[4]/button[2]");
 
 
     public AddRecordPage enterName(String name) {
@@ -42,6 +43,13 @@ public class AddRecordPage {
         Driver.getDriver().findElement(addRecordButton).click();
         return this;
     }
+    public AddRecordPage deleteJohnRecord() {
+        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.elementToBeClickable(deletButton));
+
+        Driver.getDriver().findElement(deletButton).click();
+        return this;
+    }
 
     public AddRecordPage deleteRecordByName(String recordName) {
         Driver.getDriver().findElement(By.xpath(String.format(deleteButtonByNameXPath, recordName))).click();
@@ -53,8 +61,8 @@ public class AddRecordPage {
         return this;
     }
 
-    public AddRecordPage assertTableNotContainsText(String text) {
-        assertFalse(Driver.getDriver().findElement(tableBody).getText().contains(text));
+    public AddRecordPage assertTableNotContainsText(String John) {
+        assertFalse(Driver.getDriver().findElement(tableBody).getText().contains(John));
         return this;
     }
     public AddRecordPage handleAlertIfPresent() {
@@ -64,6 +72,4 @@ public class AddRecordPage {
         }
         return this;
     }
-
-
 }

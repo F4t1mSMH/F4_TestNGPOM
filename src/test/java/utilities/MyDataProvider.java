@@ -14,19 +14,17 @@ public class MyDataProvider {
                 {"kenjoe", "567", "Comments from Ken", "Drop Down Item 4"},
         };
     }
-        private static final String[] COUNTRIES = {"USA", "Canada", "Australia", "Germany", "UK"};
-    @DataProvider
-        public static Object[][] getFakeRecords() {
-            Faker faker = new Faker();
-            String[] countries = COUNTRIES;
-            return new Object[][]{
-                    {faker.name().fullName(), String.valueOf(faker.number().numberBetween(18, 65)), countries[faker.number().numberBetween(0, countries.length - 1)], "Added"},
-                    {faker.name().fullName(), String.valueOf(faker.number().numberBetween(18, 65)), countries[faker.number().numberBetween(0, countries.length - 1)], "Added"},
-                    {faker.name().fullName(), String.valueOf(faker.number().numberBetween(18, 65)), countries[faker.number().numberBetween(0, countries.length - 1)], "Added"},
-                    {faker.name().fullName(), String.valueOf(faker.number().numberBetween(18, 65)), countries[faker.number().numberBetween(0, countries.length - 1)], "Added"},
-                    {faker.name().fullName(), String.valueOf(faker.number().numberBetween(18, 65)), countries[faker.number().numberBetween(0, countries.length - 1)], "Added"}
+
+
+        @DataProvider(name = "addFakeRecords")
+        public Object[][] getFakeRecords() {
+            return new Object[][] {
+                    {"Alice", "30", "Canada"},
+                    {"Bob", "25", "USA"},
+                    {"Charlie", "35", "UK"}
             };
         }
+
 
     @DataProvider(name = "faker", parallel = true)
     public Object[][] getFakeRecords2() {
